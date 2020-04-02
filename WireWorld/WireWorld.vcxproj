@@ -145,15 +145,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="WebWorker.cpp" />
+    <ClCompile Include="WireWeb.cpp" />
     <ClCompile Include="WireWorld.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
     <ClInclude Include="CoordinateVector.h" />
+    <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="GridState.h" />
+    <ClInclude Include="LifeRecord.h" />
+    <ClInclude Include="WebWorker.h" />
+    <ClInclude Include="WireWeb.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

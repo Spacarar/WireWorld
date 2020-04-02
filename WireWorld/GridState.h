@@ -39,11 +39,29 @@ public:
 	void setConduits(CoordinateVector conduits) {
 		conduitCoords = conduits;
 	}
+	void addConduit(std::pair<unsigned int, unsigned int> p) {
+		conduitCoords.push(p);
+	}
+	void addConduit(unsigned int y, unsigned int x) {
+		addConduit(std::make_pair(y, x));
+	}
 	void setHeads(CoordinateVector heads) {
 		headCoords = heads;
 	}
+	void addHead(std::pair<unsigned int, unsigned int> p) {
+		headCoords.push(p);
+	}
+	void addHead(unsigned int y, unsigned int x) {
+		addHead(std::make_pair(y, x));
+	}
 	void setTails(CoordinateVector tails) {
 		tailCoords = tails;
+	}
+	void addTail(std::pair<unsigned int, unsigned int> p) {
+		tailCoords.push(p);
+	}
+	void addTail(unsigned int y, unsigned int x) {
+		addTail(std::make_pair(y, x));
 	}
 	void set(CoordinateVector conduits, CoordinateVector heads, CoordinateVector tails) {
 		setConduits(conduits);

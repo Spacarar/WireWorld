@@ -1,14 +1,17 @@
 #pragma once
 #include <stdlib.h>
 #include <time.h>
-
+#include <chrono>
 enum class CellType {c_empty, c_conduit, c_head, c_tail};
+typedef std::chrono::steady_clock::time_point time_point;
+typedef std::chrono::steady_clock mClock;
+typedef std::chrono::milliseconds millis;
 
 // on random initialization
 // no need to initialize tails.
 // remaining percent or missed chance populate empty
-const float conduitChance = 0.60;
-const float headChance = 0.20;
+const double conduitChance = 0.10;
+const double headChance = 0.20;
 
 // cell fitness constants
 const long F_HEAD_TAIL = 10;

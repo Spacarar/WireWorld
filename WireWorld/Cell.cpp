@@ -25,7 +25,7 @@ bool Cell::operator==(const Cell& c) {
 	return this->_type == c._type;
 }
 bool Cell::operator!=(const Cell& c) {
-	return this->type != c._type;
+	return this->_type != c._type;
 }
 
 long Cell::update(Cell* neighbors[8], CellType& nextType) {

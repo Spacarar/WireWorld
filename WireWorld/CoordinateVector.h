@@ -25,7 +25,7 @@ public:
 	void set(std::vector<std::pair<unsigned int, unsigned int> > vec) {
 		v.clear();
 		for (unsigned int i = 0; i < vec.size(); i++) {
-			v.push_back(std::make_pair(vec[i].first, vec[i].second));
+			v.push_back(vec[i]);
 		}
 	}
 

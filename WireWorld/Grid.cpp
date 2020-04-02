@@ -5,10 +5,10 @@ Grid::Grid(unsigned int gridSize, unsigned int displaySize) {
 	this->displaySize = displaySize;
 	this->current = new Cell * *[gridSize];
 	this->previous = new Cell * *[gridSize];
-	for (int y = 0; y < gridSize; y++) {
+	for (unsigned int y = 0; y < gridSize; y++) {
 		this->current[y] = new Cell * [gridSize];
 		this->previous[y] = new Cell * [gridSize];
-		for (int x = 0; x < gridSize; x++) {
+		for (unsigned int x = 0; x < gridSize; x++) {
 			this->current[y][x] = new Cell();
 			this->previous[y][x] = new Cell();
 		}
@@ -95,6 +95,7 @@ void Grid::draw(SDL_Renderer* ren) {
 			}
 		}
 	}
+	SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
 }
 
 long Grid::update() {
@@ -211,6 +212,7 @@ GridState Grid::getState() {
 	CoordinateVector tails;
 	for (unsigned int y = 0; y < gridSize; y++) {
 		for (unsigned int x = 0; x < gridSize; x++) {
+			
 			if (current[y][x]->isType(CellType::c_conduit)) {
 				conduits.push(y, x);
 			}
