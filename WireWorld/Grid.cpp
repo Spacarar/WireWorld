@@ -103,7 +103,9 @@ long Grid::update() {
 	CellType nextType = CellType::c_empty;
 	for (unsigned int y = 0; y < gridSize; y++) {
 		for (unsigned int x = 0; x < gridSize; x++) {
-			fitness += current[y][x]->update(neighbors(y, x), nextType);
+			Cell** ee = neighbors(y, x);
+			fitness += current[y][x]->update(ee, nextType);
+			delete[] ee; // do not delete inner members, they are part of the grid
 			previous[y][x]->setType(nextType);
 		}
 	}
